@@ -1,0 +1,361 @@
+/* General Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container to hold the falling bees */
+.bee-rain-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevent interaction with bees during the animation */
+    overflow: hidden;     /* Ensure bees do not go outside the screen */
+    z-index: 1000;        /* Keep the bee rain above other elements */
+}
+
+/* General styling for each falling bee */
+.falling-bee {
+    position: absolute;
+    top: -100px; /* Start just above the screen */
+    animation: fall 5s linear infinite; /* Set the animation to repeat in case of multiple bees */
+    opacity: 0;
+    width: 50px; /* Adjust size of bees */
+}
+
+/* Keyframes for the falling animation */
+@keyframes fall {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0; /* Bees disappear after reaching the bottom */
+        transform: translateY(100vh); /* Fall the full height of the viewport */
+    }
+}
+
+/* Body styling */
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+.nav {
+    background-color: #FFD700;
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav ul li {
+    margin: 0 20px;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #3E2723;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav ul li a:hover {
+    color: #FF9800;
+}
+
+/* Main Section */
+#main {
+    background-color: #fffdf1;
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 100px 50px;
+}
+/* Ensure the main section properly aligns items vertically */
+#main-content {
+    display: block; /* Ensure the content stacks in normal flow */
+    padding-left: 50px; /* Keep the left padding */
+    text-align: left; /* Align text to the left */
+    max-width: 800px; /* Ensure there's a limit to the width */
+    margin: 0 auto; /* Center the content horizontally */
+}
+
+/* Style the main title */
+#main-title {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 120px;
+    font-weight: bold;
+    color: #2f1c19;
+    margin-bottom: 20px; /* Add spacing below the title */
+}
+
+/* Style the paragraph */
+#main-text {
+    font-size: 24px;
+    color: #2f1c19;
+    margin-bottom: 40px; /* Add space below the paragraph */
+    line-height: 1.6; /* Improve readability */
+}
+
+
+.bee-container {
+    position: relative;  /* Ensure the container holds its position relative to other elements */
+}
+
+.bee {
+    position: fixed;     /* Fixes the bees in place during scrolling */
+    top: 50%;            /* Vertically centers the bees on the screen */
+    transform: translateY(-50%); /* Adjusts for top alignment to keep the bees truly centered */
+    z-index: 1000;       /* Ensures bees stay on top of other content */
+}
+
+.bee-left {
+    left: 0;             /* Positions the first bee on the left edge of the screen */
+    margin-left: 10px;   /* Optional: Adds some spacing from the edge */
+}
+
+.bee-right {
+    right: 0;            /* Positions the second bee on the right edge of the screen */
+    margin-right: 10px;  /* Optional: Adds some spacing from the edge */
+}
+
+/* Bee Pop Animation */
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.bee-pop {
+    animation: pop 0.3s ease forwards;
+}
+
+/* Main Section Styles */
+.main-section {
+    background-color: #fffdf1;
+    padding: 50px;
+    text-align: center;
+}
+
+/* Section Styling */
+.section {
+    padding: 50px;
+    text-align: center;
+    background-color: #FFCC00;
+}
+
+.why-important {
+    background-color: #FFF3B0;
+    padding: 40px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+
+.why-die {
+    background-color: #FFF3B0;
+    padding: 40px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+.why-title {
+    font-size: 36px;
+    color: #3E2723;
+    margin-bottom: 20px;
+}
+
+.content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.content ul li {
+    padding: 10px;
+    background-color: #FFF6D8;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+/* Comparison Grid */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.comparison-item {
+    padding: 20px;
+    background-color: #FFF3B0;
+    border-radius: 8px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+}
+
+/* Section Height and Spacing */
+.section {
+    min-height: 110vh;
+    padding: 100px 50px;
+    font-size: 1.2em;
+}
+
+#why, #how, #what {
+    padding: 100px 50px;
+}
+
+/* Add spacing to the h2 and p elements */
+#what h2 {
+    margin-bottom: 30px; /* Adjust the space below the heading */
+    font-size: 36px; /* Optional: Increase font size for clarity */
+}
+
+#what p {
+    margin-bottom: 40px; /* Increase the space below the paragraph */
+    font-size: 18px; /* Optional: Adjust the font size */
+    line-height: 1.6; /* Optional: Improve readability */
+}
+
+/* Add spacing to the comparison grid */
+.comparison-grid {
+    gap: 40px; /* Adjust the space between the grid items */
+    margin-top: 40px; /* Add space between the paragraph and the grid */
+}
+
+.comparison-item h3 {
+    margin-bottom: 15px; /* Space below each comparison item title */
+}
+
+.comparison-item p {
+    margin-bottom: 20px; /* Space below each comparison item description */
+}
+
+/* Optional: Add space below the entire section */
+#what {
+    padding-bottom: 50px; /* Add padding at the bottom of the section */
+}
+/* Style for the HOW Section */
+#how {
+    background-color: #FFF3B0;
+    padding: 100px 50px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Add subtle shadow for a polished look */
+}
+
+#how h2 {
+    font-size: 36px;
+    color: #3E2723;
+    margin-bottom: 30px;
+}
+
+#how p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+/* Grid layout for action items */
+.how-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two items per row */
+    gap: 30px; /* Space between grid items */
+}
+
+/* Individual action item styling */
+.how-item {
+    background-color: #fffdf1;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Icon styling */
+.how-icon {
+    width: 60px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Action item title styling */
+.how-item h3 {
+    font-size: 24px;
+    color: #3E2723;
+    margin-bottom: 15px;
+}
+
+/* Action item paragraph styling */
+.how-item p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Hover effect for action items */
+.how-item:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Image Container */
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+/* Bee Image Styling */
+.bee-image {
+    width: 55%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.bee-image:hover {
+    transform: scale(1.05);
+}
+
+/* Default link style */
+.link {
+    color: #2f1c19; /* Make the link brown */
+}
+
+/* Hover effect */
+.link:hover {
+    color: #FF9800; /* Change color to yellow on hover */
+}
